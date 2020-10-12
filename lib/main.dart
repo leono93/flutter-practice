@@ -31,12 +31,19 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          new Center(
+          new Container(
+            alignment: FractionalOffset(0.5, 0.4),
             child: new RaisedButton(
               onPressed: () {/*..*/},
               child: Text('Connect your Blizzard Account'),
             ),
-          )
+          ),
+          new Container(
+              alignment: FractionalOffset(0.5, 0.6),
+              child: new RaisedButton(
+                onPressed: () {/*..*/},
+                child: Text('Continue without'),
+              ))
         ]),
       ),
     );
