@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:http/http.dart';
 // import './random_words.dart';
+import './home.dart';
+import './homeroute.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,37 +18,6 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Totally legit Blizzard Armory'),
-          centerTitle: true,
-          backgroundColor: Colors.blueAccent[200],
-        ),
-        body: new Stack(children: <Widget>[
-          new Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/img.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          new Container(
-            alignment: FractionalOffset(0.5, 0.4),
-            child: new RaisedButton(
-              onPressed: () {/*..*/},
-              child: Text('Connect your Blizzard Account'),
-            ),
-          ),
-          new Container(
-              alignment: FractionalOffset(0.5, 0.6),
-              child: new RaisedButton(
-                onPressed: () {/*..*/},
-                child: Text('Continue without'),
-              ))
-        ]),
-      ),
-    );
+    return MaterialApp(home: Home());
   }
 }
