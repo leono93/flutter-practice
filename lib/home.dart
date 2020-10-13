@@ -5,14 +5,6 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Choose your class',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blueGrey[600],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -23,69 +15,41 @@ class Home extends StatelessWidget {
           ),
         ),
         new Container(
-            alignment: FractionalOffset(0.00, 0.2),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+          image: AssetImage("assets/logo.png"),
+          alignment: FractionalOffset(0.0, 0.1),
+        ))),
+        new Container(
+            alignment: FractionalOffset(0.00, 0.45),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  RaisedButton(
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Warrior()),
                       );
                     },
-                    child: Text('Warrior'),
+                    icon: Image.asset("assets/warrioricon.png"),
                   ),
-                  RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Paladin()),
-                      );
-                    },
-                    child: Text('Paladin'),
-                  ),
-                  RaisedButton(
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Paladin()),
+                        );
+                      },
+                      icon: Image.asset("assets/paladinicon.png")),
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Hunter()),
                       );
                     },
-                    child: Text('Hunter'),
-                  )
-                ])),
-        new Container(
-            alignment: FractionalOffset(0.00, 0.4),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Rogue()),
-                      );
-                    },
-                    child: Text('Rogue'),
-                  ),
-                  RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Priest()),
-                      );
-                    },
-                    child: Text('Priest'),
-                  ),
-                  RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Shaman()),
-                      );
-                    },
-                    child: Text('Shaman'),
+                    icon: Image.asset("assets/huntericon.png"),
                   )
                 ])),
         new Container(
@@ -93,65 +57,98 @@ class Home extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  RaisedButton(
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Rogue()),
+                      );
+                    },
+                    icon: Image.asset("assets/rogueicon.png"),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Priest()),
+                      );
+                    },
+                    icon: Image.asset("assets/priesticon.png"),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Shaman()),
+                      );
+                    },
+                    icon: Image.asset("assets/shamanicon.png"),
+                  )
+                ])),
+        new Container(
+            alignment: FractionalOffset(0.00, 0.75),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Mage()),
                       );
                     },
-                    child: Text('Mage'),
+                    icon: Image.asset("assets/mageicon.png"),
                   ),
-                  RaisedButton(
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Warlock()),
                       );
                     },
-                    child: Text('Warlock'),
+                    icon: Image.asset("assets/warlockicon.png"),
                   ),
-                  RaisedButton(
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Monk()),
                       );
                     },
-                    child: Text('Monk'),
+                    icon: Image.asset("assets/monkicon.png"),
                   )
                 ])),
         new Container(
-            alignment: FractionalOffset(0.00, 0.8),
+            alignment: FractionalOffset(0.00, 0.9),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  RaisedButton(
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => DemonHunter()),
                       );
                     },
-                    child: Text('Demon Hunter'),
+                    icon: Image.asset("assets/dhicon.png"),
                   ),
-                  RaisedButton(
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Druid()),
                       );
                     },
-                    child: Text('Druid'),
+                    icon: Image.asset("assets/druidicon.png"),
                   ),
-                  RaisedButton(
+                  IconButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => DeathKnight()),
                       );
                     },
-                    child: Text('Death Knight'),
+                    icon: Image.asset("assets/dkicon.png"),
                   ),
                 ])),
       ]),

@@ -59,6 +59,19 @@ flutter:
   - assets/druid.jpg
   - assets/deathknight.jpg
   - assets/main.jpg
+  - assets/logo.png
+  - assets/dkicon.png
+  - assets/dhicon.png
+  - assets/druidicon.png
+  - assets/huntericon.png
+  - assets/mageicon.png
+  - assets/monkicon.png
+  - assets/paladinicon.png
+  - assets/priesticon.png
+  - assets/rogueicon.png
+  - assets/shamanicon.png
+  - assets/warlockicon.png
+  - assets/warrioricon.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
