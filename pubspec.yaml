@@ -46,7 +46,19 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets: 
-  - assets/img.jpg
+  - assets/warrior.jpg
+  - assets/paladin.jpg
+  - assets/hunter.jpg
+  - assets/rogue.jpg
+  - assets/priest.jpg
+  - assets/shaman.jpg
+  - assets/mage.jpg
+  - assets/warlock.jpg
+  - assets/monk.jpg
+  - assets/demonhunter.jpg
+  - assets/druid.jpg
+  - assets/deathknight.jpg
+  - assets/main.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -64,14 +76,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  # - family: Hind
-  #   fonts:
-  #   - asset: fonts/Hind-Bold.tff
-  #   - asset: fonts/Hind-Light.ttf
-  #   - asset: fonts/Hind-Medium.ttf
-  #   - asset: fonts/Hind-Regular.ttf
-  #   - asset: fonts/Hind-SemiBold.ttf
+  fonts:
+     - family: Hind
+       fonts:	  
+         - asset: fonts/Hind-Bold.ttf	  
+         - asset: fonts/Hind-Light.ttf	 
+         - asset: fonts/Hind-Medium.ttf
+         - asset: fonts/Hind-Regular.ttf
+         - asset: fonts/Hind-SemiBold.ttf
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
