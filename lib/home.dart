@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
         new Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/main.jpg"),
+              image: AssetImage("assets/main.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
           alignment: FractionalOffset(0.0, 0.1),
         ))),
         new Container(
-            alignment: FractionalOffset(0.00, 0.45),
+            alignment: FractionalOffset(0.0, 0.45),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -53,7 +53,7 @@ class Home extends StatelessWidget {
                   )
                 ])),
         new Container(
-            alignment: FractionalOffset(0.00, 0.6),
+            alignment: FractionalOffset(0.0, 0.6),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -86,7 +86,7 @@ class Home extends StatelessWidget {
                   )
                 ])),
         new Container(
-            alignment: FractionalOffset(0.00, 0.75),
+            alignment: FractionalOffset(0.0, 0.75),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -119,7 +119,7 @@ class Home extends StatelessWidget {
                   )
                 ])),
         new Container(
-            alignment: FractionalOffset(0.00, 0.9),
+            alignment: FractionalOffset(0.0, 0.9),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
