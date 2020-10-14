@@ -35,7 +35,10 @@ class Warrior extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -79,7 +82,10 @@ class Paladin extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -123,7 +129,10 @@ class Hunter extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -167,7 +176,10 @@ class Rogue extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -211,7 +223,10 @@ class Priest extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -255,7 +270,10 @@ class Shaman extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -299,7 +317,10 @@ class Mage extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -343,7 +364,10 @@ class Warlock extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -387,7 +411,10 @@ class Monk extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -431,7 +458,10 @@ class DemonHunter extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -475,7 +505,10 @@ class Druid extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -519,7 +552,10 @@ class DeathKnight extends StatelessWidget {
             },
             child: Text(
               'Return to class selection',
-              style: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),
