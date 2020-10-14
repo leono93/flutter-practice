@@ -4,14 +4,6 @@ class Warrior extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Warrior',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.brown[400],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -21,6 +13,14 @@ class Warrior extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Warrior',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.brown[400]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -42,14 +42,6 @@ class Paladin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Paladin',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.pink[200],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -59,6 +51,14 @@ class Paladin extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Paladin',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.pink[200]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -80,14 +80,6 @@ class Hunter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Hunter',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.lightGreen[700],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -97,6 +89,14 @@ class Hunter extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Hunter',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.lightGreen[700]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -118,14 +118,6 @@ class Rogue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Rogue',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.yellow[300],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -135,6 +127,14 @@ class Rogue extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Rogue',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.yellow[300]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -156,14 +156,6 @@ class Priest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Priest',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -173,6 +165,14 @@ class Priest extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Priest',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -194,14 +194,6 @@ class Shaman extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Shaman',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blue[700],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -211,6 +203,14 @@ class Shaman extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Shaman',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue[700]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -232,14 +232,6 @@ class Mage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Mage',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blue[300],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -249,6 +241,14 @@ class Mage extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Mage',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue[300]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -270,14 +270,6 @@ class Warlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Warlock',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.indigo[400],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -287,6 +279,14 @@ class Warlock extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Warlock',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.indigo[400]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -308,14 +308,6 @@ class Monk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Monk',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.greenAccent,
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -325,6 +317,14 @@ class Monk extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Monk',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.greenAccent))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -346,14 +346,6 @@ class DemonHunter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Demon Hunter',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.purple,
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -363,6 +355,14 @@ class DemonHunter extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Demon Hunter',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.purple))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -384,14 +384,6 @@ class Druid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Druid',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.orangeAccent[700],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -401,6 +393,14 @@ class Druid extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Druid',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.orangeAccent[700]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -422,14 +422,6 @@ class DeathKnight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Death Knight',
-          style: TextStyle(fontSize: 20.0, fontFamily: 'Hind'),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.red[900],
-      ),
       body: new Stack(children: <Widget>[
         new Container(
           decoration: BoxDecoration(
@@ -439,6 +431,14 @@ class DeathKnight extends StatelessWidget {
             ),
           ),
         ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: Text('Death Knight',
+                style: TextStyle(
+                    fontSize: 30.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red[900]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(

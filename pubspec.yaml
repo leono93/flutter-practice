@@ -97,6 +97,9 @@ flutter:
          - asset: fonts/Hind-Medium.ttf
          - asset: fonts/Hind-Regular.ttf
          - asset: fonts/Hind-SemiBold.ttf
+     - family: MORPHEUS
+       fonts:
+         - asset: fonts/MORPHEUS.ttf
 
   #
   # For details regarding fonts from package dependencies,
