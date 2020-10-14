@@ -46,7 +46,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets: 
-  - assets/warrior.jpg
+  - assets/warrior.png
   - assets/paladin.jpg
   - assets/hunter.jpg
   - assets/rogue.jpg

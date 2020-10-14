@@ -8,7 +8,7 @@ class Warrior extends StatelessWidget {
         new Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/warrior.jpg"),
+              image: AssetImage("assets/warrior.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -20,7 +20,13 @@ class Warrior extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.brown[400]))),
+                    color: Colors.brown[400],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -58,7 +64,13 @@ class Paladin extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.pink[200]))),
+                    color: Colors.pink[200],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -96,7 +108,13 @@ class Hunter extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.lightGreen[700]))),
+                    color: Colors.lightGreen[700],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -134,7 +152,13 @@ class Rogue extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.yellow[300]))),
+                    color: Colors.yellow[300],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -172,7 +196,13 @@ class Priest extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.white))),
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -210,7 +240,13 @@ class Shaman extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue[700]))),
+                    color: Colors.blue[700],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -248,7 +284,13 @@ class Mage extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue[300]))),
+                    color: Colors.blue[300],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -286,7 +328,13 @@ class Warlock extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.indigo[400]))),
+                    color: Colors.indigo[400],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -324,7 +372,13 @@ class Monk extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.greenAccent))),
+                    color: Colors.greenAccent,
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -362,7 +416,13 @@ class DemonHunter extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.purple))),
+                    color: Colors.purple,
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -400,7 +460,13 @@ class Druid extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.orangeAccent[700]))),
+                    color: Colors.orangeAccent[700],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -438,7 +504,13 @@ class DeathKnight extends StatelessWidget {
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
                     fontWeight: FontWeight.bold,
-                    color: Colors.red[900]))),
+                    color: Colors.red[900],
+                    shadows: [
+                      Shadow(
+                          blurRadius: 10.0,
+                          color: Colors.black,
+                          offset: Offset(5.0, 5.0))
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
