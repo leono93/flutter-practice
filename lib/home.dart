@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
-import './homeroutes.dart';
+import './classes/warrior.dart';
+import './classes/paladin.dart';
+import './classes/hunter.dart';
+import './classes/rogue.dart';
+import './classes/priest.dart';
+import './classes/shaman.dart';
+import './classes/mage.dart';
+import './classes/warlock.dart';
+import './classes/monk.dart';
+import './classes/demonhunter.dart';
+import './classes/druid.dart';
+import './classes/deathknight.dart';
 
 class Home extends StatelessWidget {
   @override
