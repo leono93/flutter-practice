@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+BoxDecoration myBoxDecoration() {
+  return BoxDecoration(
+    border: Border.all(),
+  );
+}
+
 class Warrior extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,6 +33,28 @@ class Warrior extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -34,7 +62,7 @@ class Warrior extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -74,6 +102,28 @@ class Paladin extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -81,7 +131,7 @@ class Paladin extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -121,6 +171,28 @@ class Hunter extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -128,7 +200,7 @@ class Hunter extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -168,6 +240,28 @@ class Rogue extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -175,7 +269,7 @@ class Rogue extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -215,6 +309,28 @@ class Priest extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -222,7 +338,7 @@ class Priest extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -262,6 +378,28 @@ class Shaman extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -269,7 +407,7 @@ class Shaman extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -309,6 +447,28 @@ class Mage extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -316,7 +476,7 @@ class Mage extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -356,6 +516,28 @@ class Warlock extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -363,7 +545,7 @@ class Warlock extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -403,6 +585,28 @@ class Monk extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -410,7 +614,7 @@ class Monk extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -450,6 +654,28 @@ class DemonHunter extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -457,7 +683,7 @@ class DemonHunter extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -497,6 +723,28 @@ class Druid extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -504,7 +752,7 @@ class Druid extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
@@ -544,6 +792,28 @@ class DeathKnight extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowicon.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/raiderio.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/wowhead.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -551,7 +821,7 @@ class DeathKnight extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return to class selection',
+              'Class Selection',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
