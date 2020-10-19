@@ -6,7 +6,7 @@ const port = 3300;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Battlenet-Namespace: static-eu');
   res.end('Boop');
 });
 
@@ -18,7 +18,7 @@ const blizzard = require('blizzard.js').initialize({
     key: process.env.BLIZZARD_CLIENT_ID,
     secret: process.env.BLIZZARD_CLIENT_SECRET,
     origin: 'eu',
-    locale: 'en_EU'
+    locale: 'en_GB'
   });
   
   async function example () {
@@ -26,9 +26,8 @@ const blizzard = require('blizzard.js').initialize({
       await blizzard.getApplicationToken()
         .then(response => {
           blizzard.defaults.token = response.data.access_token
-          console.log(response.data.access_token);
         });
-      const item = await blizzard.wow.item({ id: 168185 });
+      const item = await blizzard.wow.item({ id: 168186 });
       console.log(item)
     } catch (err) {
       console.error(err);
