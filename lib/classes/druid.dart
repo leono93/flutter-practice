@@ -74,12 +74,12 @@ class Druid extends StatelessWidget {
               color: Color(0xff9c9c9c).withOpacity(0.3),
               child: Align(
                   child: BorderedText(
-                      strokeWidth: 3.0,
-                      strokeColor: Colors.brown[900],
+                      strokeWidth: 2.0,
+                      strokeColor: Colors.black,
                       child: Text('$className 1',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Colors.brown[400],
+                              color: Colors.orangeAccent[700],
                               fontWeight: FontWeight.bold,
                               shadows: [
                                 Shadow(
@@ -93,12 +93,12 @@ class Druid extends StatelessWidget {
                 color: Color(0xff9c9c9c).withOpacity(0.3),
                 child: Align(
                   child: BorderedText(
-                      strokeWidth: 3.0,
-                      strokeColor: Colors.brown[900],
+                      strokeWidth: 2.0,
+                      strokeColor: Colors.black,
                       child: Text('$className 2',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Colors.brown[400],
+                              color: Colors.orangeAccent[700],
                               fontWeight: FontWeight.bold,
                               shadows: [
                                 Shadow(
@@ -112,12 +112,12 @@ class Druid extends StatelessWidget {
               color: Color(0xff9c9c9c).withOpacity(0.3),
               child: Align(
                   child: BorderedText(
-                      strokeWidth: 3.0,
-                      strokeColor: Colors.brown[900],
+                      strokeWidth: 2.0,
+                      strokeColor: Colors.black,
                       child: Text('$className 3',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Colors.brown[400],
+                              color: Colors.orangeAccent[700],
                               fontWeight: FontWeight.bold,
                               shadows: [
                                 Shadow(
