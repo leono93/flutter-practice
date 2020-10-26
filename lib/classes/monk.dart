@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 const playerClass = 'monk';
 const className = 'Monk';
+const classDescription =
+    'Whatever their combat role, monks rely mainly on their hands and feet to do the talking, and on strong connection with their inner chi to power their abilities. Monks can also heal their allies while at the same time damaging their enemies.';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

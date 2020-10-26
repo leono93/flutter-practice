@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 const playerClass = 'paladin';
 const className = 'Paladin';
+const classDescription =
+    'Paladins stand directly in front of their enemies, relying on heavy armor and healing in order to survive incoming attacks. Whether with massive shields or crushing two-handed weapons, Paladins are able to keep claws and swords from their weaker fellows – or they use healing magic to ensure that they remain on their feet.';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

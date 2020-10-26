@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 const playerClass = 'warlock';
 const className = 'Warlock';
+const classDescription =
+    'Warlocks burn and destroy weakened foes with a combination of crippling illnesses and dark magic. While their demon pets protect and enhance them, warlocks strike at their enemies from a distance. As physically weak spellcasters bereft of heavy armor, cunning warlocks allow their minions to take the brunt of enemy attacks in order to save their own skin.';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';
