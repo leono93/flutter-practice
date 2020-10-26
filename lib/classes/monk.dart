@@ -1,4 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+const playerClass = 'monk';
+
+_redirectOfficial() async {
+  const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_redirectRio() async {
+  const url =
+      'https://raider.io/mythic-plus-character-rankings/season-bfa-4-post/world/$playerClass/all';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_redirectWowhead() async {
+  const url = 'https://www.wowhead.com/$playerClass';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class Monk extends StatelessWidget {
   @override
@@ -38,14 +69,14 @@ class Monk extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       IconButton(
-                        onPressed: () {},
+                        onPressed: _redirectOfficial,
                         icon: Image.asset("assets/wowicon.png"),
                       ),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: _redirectRio,
                           icon: Image.asset("assets/raiderio.png")),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: _redirectWowhead,
                         icon: Image.asset("assets/wowhead.png"),
                       )
                     ]))),
