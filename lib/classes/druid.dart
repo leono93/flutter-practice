@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:bordered_text/bordered_text.dart';
 
 const playerClass = 'druid';
 const className = 'Druid';
@@ -71,18 +72,59 @@ class Druid extends StatelessWidget {
             Container(
               height: 50,
               color: Color(0xff9c9c9c).withOpacity(0.3),
-              child: Align(child: Text('$className 1')),
+              child: Align(
+                  child: BorderedText(
+                      strokeWidth: 3.0,
+                      strokeColor: Colors.brown[900],
+                      child: Text('$className 1',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.brown[400],
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                    blurRadius: 9.0,
+                                    color: Colors.black,
+                                    offset: Offset(5.0, 5.0))
+                              ])))),
             ),
+            Container(
+                height: 50,
+                color: Color(0xff9c9c9c).withOpacity(0.3),
+                child: Align(
+                  child: BorderedText(
+                      strokeWidth: 3.0,
+                      strokeColor: Colors.brown[900],
+                      child: Text('$className 2',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.brown[400],
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                    blurRadius: 9.0,
+                                    color: Colors.black,
+                                    offset: Offset(5.0, 5.0))
+                              ]))),
+                )),
             Container(
               height: 50,
               color: Color(0xff9c9c9c).withOpacity(0.3),
-              child: Align(child: Text('$className 2')),
-            ),
-            Container(
-              height: 50,
-              color: Color(0xff9c9c9c).withOpacity(0.3),
-              child:
-                  Align(child: Text('$className 3', textAlign: TextAlign.left)),
+              child: Align(
+                  child: BorderedText(
+                      strokeWidth: 3.0,
+                      strokeColor: Colors.brown[900],
+                      child: Text('$className 3',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.brown[400],
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                    blurRadius: 9.0,
+                                    color: Colors.black,
+                                    offset: Offset(5.0, 5.0))
+                              ])))),
             ),
           ],
         ))),
