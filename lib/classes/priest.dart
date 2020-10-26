@@ -2,32 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const playerClass = 'priest';
+const className = 'Priest';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';
+  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
-    throw 'Could not launch $url';
+    throw errorMsg;
   }
 }
 
 _redirectRio() async {
   const url =
       'https://raider.io/mythic-plus-character-rankings/season-bfa-4-post/world/$playerClass/all';
+  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
-    throw 'Could not launch $url';
+    throw errorMsg;
   }
 }
 
 _redirectWowhead() async {
   const url = 'https://www.wowhead.com/$playerClass';
+  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
-    throw 'Could not launch $url';
+    throw errorMsg;
   }
 }
 
@@ -46,7 +50,7 @@ class Priest extends StatelessWidget {
         ),
         Align(
             alignment: FractionalOffset(0.5, 0.1),
-            child: Text('Priest',
+            child: Text('$className',
                 style: TextStyle(
                     fontSize: 30.0,
                     fontFamily: 'MORPHEUS',
@@ -58,6 +62,28 @@ class Priest extends StatelessWidget {
                           color: Colors.black,
                           offset: Offset(5.0, 5.0))
                     ]))),
+        Align(
+            child: SingleChildScrollView(
+                child: Column(
+          children: <Widget>[
+            Container(
+              height: 50,
+              color: Color(0xff9c9c9c).withOpacity(0.3),
+              child: Align(child: Text('$className 1')),
+            ),
+            Container(
+              height: 50,
+              color: Color(0xff9c9c9c).withOpacity(0.3),
+              child: Align(child: Text('$className 2')),
+            ),
+            Container(
+              height: 50,
+              color: Color(0xff9c9c9c).withOpacity(0.3),
+              child:
+                  Align(child: Text('$className 3', textAlign: TextAlign.left)),
+            ),
+          ],
+        ))),
         Align(
             alignment: FractionalOffset(0.5, 0.85),
             child: Container(
@@ -88,6 +114,19 @@ class Priest extends StatelessWidget {
             },
             child: Text(
               'Class Selection',
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+        new Container(
+          alignment: FractionalOffset(0.95, 0.995),
+          child: new RaisedButton(
+            onPressed: () {},
+            child: Text(
+              'Add Character',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
