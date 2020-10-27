@@ -18,18 +18,21 @@ class RogueDesc extends StatelessWidget {
         ),
         Align(
             alignment: FractionalOffset(0.5, 0.1),
-            child: Text('$className',
-                style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'MORPHEUS',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.yellow[300],
-                    shadows: [
-                      Shadow(
-                          blurRadius: 10.0,
-                          color: Colors.black,
-                          offset: Offset(5.0, 5.0))
-                    ]))),
+            child: BorderedText(
+                strokeWidth: 1.8,
+                strokeColor: Colors.black,
+                child: Text('$className Resources',
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        fontFamily: 'MORPHEUS',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow[300],
+                        shadows: [
+                          Shadow(
+                              blurRadius: 10.0,
+                              color: Colors.black,
+                              offset: Offset(5.0, 5.0))
+                        ])))),
         Align(
             alignment: FractionalOffset(0.5, 0.25),
             child: Padding(
@@ -47,6 +50,23 @@ class RogueDesc extends StatelessWidget {
                                   color: Colors.black,
                                   offset: Offset(5.0, 5.0))
                             ]))))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.5),
+            child: BorderedText(
+                strokeWidth: 1.8,
+                strokeColor: Colors.black,
+                child: Text('Specializations',
+                    style: TextStyle(
+                        fontSize: 25.0,
+                        fontFamily: 'MORPHEUS',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow[300],
+                        shadows: [
+                          Shadow(
+                              blurRadius: 10.0,
+                              color: Colors.black,
+                              offset: Offset(5.0, 5.0))
+                        ])))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(

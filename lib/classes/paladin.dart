@@ -54,18 +54,21 @@ class Paladin extends StatelessWidget {
         ),
         Align(
             alignment: FractionalOffset(0.5, 0.1),
-            child: Text('$className',
-                style: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: 'MORPHEUS',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink[200],
-                    shadows: [
-                      Shadow(
-                          blurRadius: 10.0,
-                          color: Colors.black,
-                          offset: Offset(5.0, 5.0))
-                    ]))),
+            child: BorderedText(
+                strokeWidth: 1.8,
+                strokeColor: Colors.black,
+                child: Text('$className',
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        fontFamily: 'MORPHEUS',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink[200],
+                        shadows: [
+                          Shadow(
+                              blurRadius: 10.0,
+                              color: Colors.black,
+                              offset: Offset(5.0, 5.0))
+                        ])))),
         Align(
             child: SingleChildScrollView(
                 child: Column(
