@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "../classes/priest.dart";
 import 'package:bordered_text/bordered_text.dart';
+import "../home.dart";
 
 class PriestDesc extends StatelessWidget {
   @override
@@ -54,6 +55,24 @@ class PriestDesc extends StatelessWidget {
             },
             child: Text(
               'Return',
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+        new Container(
+          alignment: FractionalOffset(0.95, 0.995),
+          child: new RaisedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
+            },
+            child: Text(
+              'Home',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',
