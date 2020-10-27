@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:bordered_text/bordered_text.dart';
 import '../descriptions/dhDesc.dart';
 
@@ -9,37 +8,6 @@ const classDescription =
     'Forgoing heavy armor, Demon Hunters capitalize on speed, closing the distance quickly to strike enemies with one-handed weapons. However, Illidari must also use their agility defensively to ensure that battles end favorably.';
 const spec1 = 'havoc';
 const spec2 = 'vengeance';
-
-_redirectOfficial() async {
-  const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';
-  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw errorMsg;
-  }
-}
-
-_redirectRio() async {
-  const url =
-      'https://raider.io/mythic-plus-character-rankings/season-bfa-4-post/world/$playerClass/all';
-  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw errorMsg;
-  }
-}
-
-_redirectWowhead() async {
-  const url = 'https://www.wowhead.com/$playerClass';
-  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw errorMsg;
-  }
-}
 
 class DemonHunter extends StatelessWidget {
   @override
@@ -134,28 +102,6 @@ class DemonHunter extends StatelessWidget {
             ),
           ],
         ))),
-        Align(
-            alignment: FractionalOffset(0.5, 0.85),
-            child: Container(
-                height: 75,
-                width: 175,
-                margin: const EdgeInsets.all(5.0),
-                padding: const EdgeInsets.all(5.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: _redirectOfficial,
-                        icon: Image.asset("assets/wowicon.png"),
-                      ),
-                      IconButton(
-                          onPressed: _redirectRio,
-                          icon: Image.asset("assets/raiderio.png")),
-                      IconButton(
-                        onPressed: _redirectWowhead,
-                        icon: Image.asset("assets/wowhead.png"),
-                      )
-                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(

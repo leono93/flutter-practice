@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:bordered_text/bordered_text.dart';
 import '../descriptions/monkDesc.dart';
 
@@ -10,37 +9,6 @@ const classDescription =
 const spec1 = 'brewmaster';
 const spec2 = 'mistweaver';
 const spec3 = 'windwalker';
-
-_redirectOfficial() async {
-  const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';
-  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw errorMsg;
-  }
-}
-
-_redirectRio() async {
-  const url =
-      'https://raider.io/mythic-plus-character-rankings/season-bfa-4-post/world/$playerClass/all';
-  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw errorMsg;
-  }
-}
-
-_redirectWowhead() async {
-  const url = 'https://www.wowhead.com/$playerClass';
-  const errorMsg = 'Oops! Something went wrong while trying to launch $url';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw errorMsg;
-  }
-}
 
 class Monk extends StatelessWidget {
   @override
@@ -135,28 +103,6 @@ class Monk extends StatelessWidget {
             ),
           ],
         ))),
-        Align(
-            alignment: FractionalOffset(0.5, 0.85),
-            child: Container(
-                height: 75,
-                width: 175,
-                margin: const EdgeInsets.all(5.0),
-                padding: const EdgeInsets.all(5.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: _redirectOfficial,
-                        icon: Image.asset("assets/wowicon.png"),
-                      ),
-                      IconButton(
-                          onPressed: _redirectRio,
-                          icon: Image.asset("assets/raiderio.png")),
-                      IconButton(
-                        onPressed: _redirectWowhead,
-                        icon: Image.asset("assets/wowhead.png"),
-                      )
-                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
