@@ -7,6 +7,9 @@ const playerClass = 'warrior';
 const className = 'Warrior';
 const classDescription =
     'Warriors equip themselves carefully for combat and engage their enemies head-on, letting attacks glance off their heavy armor. They use diverse combat tactics and a wide variety of weapon types to protect their more vulnerable allies. Warriors must carefully master their rage – the power behind their strongest attacks – in order to maximize their effectiveness in combat.';
+const spec1 = 'arms';
+const spec2 = 'fury';
+const spec3 = 'wprotection';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

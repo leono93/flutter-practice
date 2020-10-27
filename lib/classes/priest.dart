@@ -7,6 +7,9 @@ const playerClass = 'priest';
 const className = 'Priest';
 const classDescription =
     'Priests use powerful healing magic to fortify themselves and their allies. They also wield powerful offensive spells from a distance, but can be overwhelmed by enemies due to their physical frailty and minimal armor. Experienced priests carefully balance the use of their offensive powers when tasked with keeping their party alive.';
+const spec1 = 'discipline';
+const spec2 = 'pholy';
+const spec3 = 'shadow';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

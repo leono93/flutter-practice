@@ -67,6 +67,28 @@ class WarlockDesc extends StatelessWidget {
                               color: Colors.black,
                               offset: Offset(5.0, 5.0))
                         ])))),
+        Align(
+            alignment: FractionalOffset(0.5, 0.65),
+            child: Container(
+                height: 75,
+                width: 175,
+                margin: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/$spec1.png"),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image.asset("assets/$spec2.png")),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Image.asset("assets/$spec3.png"),
+                      )
+                    ]))),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -74,7 +96,7 @@ class WarlockDesc extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Text(
-              'Return',
+              'Back',
               style: TextStyle(
                   fontSize: 14.0,
                   fontFamily: 'MORPHEUS',

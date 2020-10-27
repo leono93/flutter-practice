@@ -7,6 +7,9 @@ const playerClass = 'mage';
 const className = 'Mage';
 const classDescription =
     'Mages demolish their foes with arcane incantations. Although they wield powerful offensive spells, mages are fragile and lightly armored, making them particularly vulnerable to close-range attacks. Wise mages make careful use of their spells to keep their foes at a distance or hold them in place.';
+const spec1 = 'mfrost';
+const spec2 = 'fire';
+const spec3 = 'arcane';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

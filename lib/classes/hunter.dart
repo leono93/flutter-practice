@@ -7,6 +7,9 @@ const playerClass = 'hunter';
 const className = 'Hunter';
 const classDescription =
     'Hunters battle their foes at a distance or up close, commanding their pets to attack while they nock their arrows, fire their guns, or ready their polearms. Though their weapons are effective at short and long ranges, hunters are also highly mobile. They can evade or restrain their foes to control the arena of battle.';
+const spec1 = 'beastmastery';
+const spec2 = 'marksmanship';
+const spec3 = 'survival';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

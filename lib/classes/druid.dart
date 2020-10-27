@@ -7,6 +7,10 @@ const playerClass = 'druid';
 const className = 'Druid';
 const classDescription =
     'Druids are versatile combatants, in that they can fulfill nearly every role – healing, tanking, and damage dealing. It’s critical that druids tailor the form they choose to the situation, as each form bears a specific purpose.';
+const spec1 = 'balance';
+const spec2 = 'feral';
+const spec3 = 'guardian';
+const spec4 = 'drestoration';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

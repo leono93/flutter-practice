@@ -7,6 +7,9 @@ const playerClass = 'monk';
 const className = 'Monk';
 const classDescription =
     'Whatever their combat role, monks rely mainly on their hands and feet to do the talking, and on strong connection with their inner chi to power their abilities. Monks can also heal their allies while at the same time damaging their enemies.';
+const spec1 = 'brewmaster';
+const spec2 = 'mistweaver';
+const spec3 = 'windwalker';
 
 _redirectOfficial() async {
   const url = 'https://worldofwarcraft.com/en-gb/game/classes/$playerClass';

@@ -82,6 +82,44 @@ flutter:
   - assets/wowicon.png
   - assets/wowhead.png
   - assets/raiderio.png
+  - assets/drestoration.png
+  - assets/guardian.png
+  - assets/feral.png
+  - assets/balance.png
+  - assets/vengeance.png
+  - assets/havoc.png
+  - assets/windwalker.png
+  - assets/mistweaver.png
+  - assets/brewmaster.png
+  - assets/destruction.png
+  - assets/demonology.png
+  - assets/affliction.png
+  - assets/mfrost.png
+  - assets/fire.png
+  - assets/arcane.png
+  - assets/restoration.png
+  - assets/enhancement.png
+  - assets/elemental.png
+  - assets/shadow.png
+  - assets/pholy.png
+  - assets/discipline.png
+  - assets/subtlety.png
+  - assets/outlaw.png
+  - assets/assassination.png
+  - assets/survival.png
+  - assets/marksmanship.png
+  - assets/beastmastery.png
+  - assets/retribution.png
+  - assets/pprotection.png
+  - assets/paholy.png
+  - assets/wprotection.png
+  - assets/fury.png
+  - assets/arms.png
+  - assets/unholy.png
+  - assets/frost.png
+  - assets/blood.png
+
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
