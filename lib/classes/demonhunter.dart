@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:bordered_text/bordered_text.dart';
+import '../descriptions/dhDesc.dart';
 
 const playerClass = 'demon-hunter';
 const className = 'Demon Hunter';
@@ -46,7 +47,7 @@ class DemonHunter extends StatelessWidget {
         new Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/demonhunter.jpg"),
+              image: AssetImage("assets/$playerClass.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -164,6 +165,28 @@ class DemonHunter extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
           ),
+        ),
+        new Container(
+          alignment: FractionalOffset(0.5, 0.995),
+          child: ButtonTheme(
+              minWidth: 30,
+              height: 36,
+              buttonColor: Color(0xffe0e0e0),
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DemonHunterDesc()),
+                  );
+                },
+                child: Text(
+                  'ⓘ',
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontFamily: 'MORPHEUS',
+                      fontWeight: FontWeight.bold),
+                ),
+              )),
         ),
         new Container(
           alignment: FractionalOffset(0.95, 0.995),
