@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:bordered_text/bordered_text.dart';
+import 'package:newApp/models/character.dart';
 import '../descriptions/warriorDesc.dart';
+import 'package:hive/hive.dart';
+import '../models/character.dart';
+import '../forms/charForm.dart';
 
 const playerClass = 'warrior';
 const className = 'Warrior';
@@ -41,68 +45,9 @@ class Warrior extends StatelessWidget {
                               offset: Offset(5.0, 5.0))
                         ])))),
         Align(
-            child: SingleChildScrollView(
-                child: Column(
-          children: <Widget>[
-            Container(
-              height: 50,
-              color: Color(0xff9c9c9c).withOpacity(0.3),
-              child: Align(
-                  child: BorderedText(
-                      strokeWidth: 2.0,
-                      strokeColor: Colors.black,
-                      child: Text('$className 1',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: Colors.brown[400],
-                              fontWeight: FontWeight.bold,
-                              shadows: [
-                                Shadow(
-                                    blurRadius: 9.0,
-                                    color: Colors.black,
-                                    offset: Offset(5.0, 5.0))
-                              ])))),
-            ),
-            Container(
-                height: 50,
-                color: Color(0xff9c9c9c).withOpacity(0.3),
-                child: Align(
-                  child: BorderedText(
-                      strokeWidth: 2.0,
-                      strokeColor: Colors.black,
-                      child: Text('$className 2',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: Colors.brown[400],
-                              fontWeight: FontWeight.bold,
-                              shadows: [
-                                Shadow(
-                                    blurRadius: 9.0,
-                                    color: Colors.black,
-                                    offset: Offset(5.0, 5.0))
-                              ]))),
-                )),
-            Container(
-              height: 50,
-              color: Color(0xff9c9c9c).withOpacity(0.3),
-              child: Align(
-                  child: BorderedText(
-                      strokeWidth: 2.0,
-                      strokeColor: Colors.black,
-                      child: Text('$className 3',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: Colors.brown[400],
-                              fontWeight: FontWeight.bold,
-                              shadows: [
-                                Shadow(
-                                    blurRadius: 9.0,
-                                    color: Colors.black,
-                                    offset: Offset(5.0, 5.0))
-                              ])))),
-            ),
-          ],
-        ))),
+          alignment: FractionalOffset(0.5, 0.5),
+          child: _buildListView(),
+        ),
         new Container(
           alignment: FractionalOffset(0.05, 0.995),
           child: new RaisedButton(
@@ -154,6 +99,23 @@ class Warrior extends StatelessWidget {
           ),
         ),
       ]),
+    );
+  }
+
+  ListView _buildListView() {
+    final characterBox = Hive.box('character');
+    return ListView.builder(
+      itemCount: characterBox.length,
+      itemBuilder: (context, index) {
+        final character = characterBox.get(index) as Character;
+        return ListTile(
+            title: Text(character.charName),
+            subtitle: Row(children: <Widget>[
+              Text(character.charRealm),
+              Text(character.charLevel.toString()),
+              Text(character.charClass)
+            ]));
+      },
     );
   }
 }
