@@ -166,7 +166,7 @@ class Home extends StatelessWidget {
                   ])),
         ]),
         bottomNavigationBar: BottomAppBar(
-            color: Colors.white,
+            color: Colors.black,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -175,12 +175,11 @@ class Home extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed: () {},
+                  child: Text("I am"),
                 ),
                 RaisedButton(
                   onPressed: () {},
-                ),
-                RaisedButton(
-                  onPressed: () {},
+                  child: Text("a button"),
                 ),
               ],
             )));
