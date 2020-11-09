@@ -2,19 +2,46 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 
 class RealmButton extends StatelessWidget {
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController realmController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: RaisedButton(
+      appBar: AppBar(title: Text('Character Search')),
+      body: Stack(children: <Widget>[
+      Container(
+        alignment: FractionalOffset(0.5, 0.10),
+      child: TextField(
+        controller: nameController,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: 'Enter a character name'
+        ))),      Container(
+        alignment: FractionalOffset(0.5, 0.20),
+      child: TextField(
+        controller: realmController,
+        decoration: InputDecoration(
+        border: InputBorder.none,
+        hintText: 'Enter a realm name'
+        ))),
+        Container(
+          alignment: FractionalOffset(0.90, 0.20),
+      child: RaisedButton(
         onPressed: () {
           Navigator.push(
           context,
           MaterialPageRoute(
           builder: (context) => ListViewRealms()),
           );
-        }
-    ));
+        },
+        child: Text('Realm Selection')
+    ),),
+            Container(
+          alignment: FractionalOffset(0.5, 0.4),
+      child: RaisedButton(
+        onPressed: () {print(nameController.text); print(realmController.text);},
+        child: Text('Search')
+    ),)]));
   }
 }
 
