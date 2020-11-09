@@ -39,7 +39,7 @@ class RealmButton extends StatelessWidget {
             Container(
           alignment: FractionalOffset(0.5, 0.4),
       child: RaisedButton(
-        onPressed: () {print(nameController.text); print(realmController.text);},
+        onPressed: () {},
         child: Text('Search')
     ),)]));
   }
