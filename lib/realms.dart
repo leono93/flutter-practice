@@ -1,47 +1,68 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
+import './raideriopost.dart';
 
-class RealmButton extends StatelessWidget {
+class CharacterField extends StatefulWidget {
+  CharacterField({Key key, this.enteredName, this.enteredRealm})
+      : super(key: key);
+  final String enteredName;
+  final String enteredRealm;
+  @override
+  _CharacterFieldState createState() => _CharacterFieldState();
+}
+
+class _CharacterFieldState extends State<CharacterField> {
   TextEditingController nameController = new TextEditingController();
   TextEditingController realmController = new TextEditingController();
+
+  String enteredName = "";
+  String enteredRealm = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Character Search')),
-      body: Stack(children: <Widget>[
-      Container(
-        alignment: FractionalOffset(0.5, 0.10),
-      child: TextField(
-        controller: nameController,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: 'Enter a character name'
-        ))),      Container(
-        alignment: FractionalOffset(0.5, 0.20),
-      child: TextField(
-        controller: realmController,
-        decoration: InputDecoration(
-        border: InputBorder.none,
-        hintText: 'Enter a realm name'
-        ))),
-        Container(
-          alignment: FractionalOffset(0.90, 0.20),
-      child: RaisedButton(
-        onPressed: () {
-          Navigator.push(
-          context,
-          MaterialPageRoute(
-          builder: (context) => ListViewRealms()),
-          );
-        },
-        child: Text('Realm Selection')
-    ),),
-            Container(
-          alignment: FractionalOffset(0.5, 0.4),
-      child: RaisedButton(
-        onPressed: () {},
-        child: Text('Search')
-    ),)]));
+        appBar: AppBar(title: Text('Character Search')),
+        body: Stack(children: <Widget>[
+          Container(
+              alignment: FractionalOffset(0.5, 0.10),
+              child: TextField(
+                  controller: nameController,
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Enter a character name'))),
+          Container(
+              alignment: FractionalOffset(0.5, 0.20),
+              child: TextField(
+                  controller: realmController,
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Enter a realm name'))),
+          Container(
+            alignment: FractionalOffset(0.90, 0.20),
+            child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ListViewRealms()),
+                  );
+                },
+                child: Text('Realm Selection')),
+          ),
+          Container(
+            alignment: FractionalOffset(0.5, 0.4),
+            child: RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    enteredName = nameController.text;
+                    enteredRealm = realmController.text;
+                  });
+                  print(enteredName);
+                  print(enteredRealm);
+                  fetchRioCharacter(enteredName, enteredRealm);
+                },
+                child: Text('Search')),
+          )
+        ]));
   }
 }
 
@@ -157,24 +178,19 @@ class ListViewRealms extends StatelessWidget {
     "Xavius",
     "Zenedar"
   ];
-      ListView _buildListViewRealms(){
-        return ListView.builder(
+  ListView _buildListViewRealms() {
+    return ListView.builder(
         itemCount: realms.length,
         itemBuilder: (BuildContext ctxt, int index) {
-          return ListTile(
-            title: Text(realms[index])
-          );
-        }
-      );
-    }
+          return ListTile(title: Text(realms[index]));
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: _buildListViewRealms(),
-        );
+      appBar: AppBar(),
+      body: _buildListViewRealms(),
+    );
   }
 }
-
-

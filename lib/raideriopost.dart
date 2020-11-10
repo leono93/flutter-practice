@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import './realms.dart';
 
-Future<RaiderIO> fetchRioCharacter() async {
-  var realmName = "argent-dawn";
-  var charName = "reveformed";
+Future<RaiderIO> fetchRioCharacter(
+    String enteredName, String enteredRealm) async {
   var url =
-      "https://raider.io/api/v1/characters/profile?region=eu&realm=$realmName&name=$charName";
+      "https://raider.io/api/v1/characters/profile?region=eu&realm=$enteredRealm&name=$enteredName";
   var response = await http.get(url);
   if (response.statusCode == 200) {
     var jsonResponse = jsonDecode(response.body);
@@ -17,6 +17,7 @@ Future<RaiderIO> fetchRioCharacter() async {
     return raiderio;
   } else {
     print("Failed: ${response.statusCode}");
+    print(url);
     return null;
   }
 }
@@ -110,7 +111,7 @@ class _RaiderIOPostState extends State<RaiderIOPost> {
   @override
   void initState() {
     super.initState();
-    futureRaiderIO = fetchRioCharacter();
+    futureRaiderIO = fetchRioCharacter("", "");
   }
 
   @override
@@ -121,7 +122,7 @@ class _RaiderIOPostState extends State<RaiderIOPost> {
           future: futureRaiderIO,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return Text(snapshot.data.name);
+              return Text(snapshot.data.thumbnailUrl);
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
             }
