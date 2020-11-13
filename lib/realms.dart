@@ -1,6 +1,7 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 import './raideriopost.dart';
+import 'package:bordered_text/bordered_text.dart';
 
 class CharacterField extends StatefulWidget {
   CharacterField({Key key, this.enteredName, this.enteredRealm})
@@ -186,11 +187,34 @@ class ListViewRealms extends StatelessWidget {
           title: Text("Realm Selection"),
           backgroundColor: Color(0xff84a2ba),
         ),
-        body: GridView.count(
-            childAspectRatio: 5,
-            crossAxisCount: 2,
-            children: List.generate(109, (index) {
-              return Center(child: Text(realms[index]));
-            })));
+        body: Stack(children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/realmsBackground.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          GridView.count(
+              childAspectRatio: 5,
+              crossAxisCount: 2,
+              children: List.generate(109, (index) {
+                return Center(
+                    child: BorderedText(
+                        strokeWidth: 1.8,
+                        strokeColor: Colors.black,
+                        child: Text((realms[index]),
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color(0xffd4d4d4),
+                                shadows: [
+                                  Shadow(
+                                      blurRadius: 10,
+                                      color: Colors.black,
+                                      offset: Offset(5.0, 5.0))
+                                ]))));
+              }))
+        ]));
   }
 }
