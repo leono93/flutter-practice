@@ -67,7 +67,7 @@ class _CharacterFieldState extends State<CharacterField> {
 }
 
 class ListViewRealms extends StatelessWidget {
-  List<String> realms = [
+  final List<String> realms = [
     "Aerie Peak",
     "Agamaggan",
     "Aggramar",
@@ -178,19 +178,19 @@ class ListViewRealms extends StatelessWidget {
     "Xavius",
     "Zenedar"
   ];
-  ListView _buildListViewRealms() {
-    return ListView.builder(
-        itemCount: realms.length,
-        itemBuilder: (BuildContext ctxt, int index) {
-          return ListTile(title: Text(realms[index]));
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: _buildListViewRealms(),
-    );
+        appBar: AppBar(
+          title: Text("Realm Selection"),
+          backgroundColor: Color(0xff84a2ba),
+        ),
+        body: GridView.count(
+            childAspectRatio: 5,
+            crossAxisCount: 2,
+            children: List.generate(109, (index) {
+              return Center(child: Text(realms[index]));
+            })));
   }
 }
