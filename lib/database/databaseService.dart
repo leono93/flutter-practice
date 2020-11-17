@@ -68,7 +68,19 @@ class DatabaseService {
   Future<Character> insert(Character character) async {
     final db = await database;
     character.id = await db.insert(TABLE_CHARACTER, character.toMap());
-    print(character.id);
     return character;
+  }
+
+  Future<int> delete(int id) async {
+    final db = await database;
+
+    return await db.delete(TABLE_CHARACTER, where: "id = ?", whereArgs: [id]);
+  }
+
+  Future<int> update(Character character) async {
+    final db = await database;
+
+    return await db.update(TABLE_CHARACTER, character.toMap(),
+        where: "id = ?", whereArgs: [character.id]);
   }
 }

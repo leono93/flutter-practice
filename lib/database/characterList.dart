@@ -4,7 +4,6 @@ import './characterEvent.dart';
 import './databaseService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../bloc/character_bloc.dart';
 
 class CharacterList extends StatefulWidget {
@@ -45,7 +44,12 @@ class _CharacterListState extends State<CharacterList> {
             child: Text("Update"),
           ),
           FlatButton(
-            onPressed: () => {},
+            onPressed: () => DatabaseService.db.delete(character.id).then((_) {
+              BlocProvider.of<CharacterBloc>(context).add(
+                CharacterEvent.delete(index),
+              );
+              Navigator.pop(context);
+            }),
             child: Text("Delete"),
           ),
           FlatButton(
@@ -73,7 +77,7 @@ class _CharacterListState extends State<CharacterList> {
                 return ListTile(
                     title: Text(character.name, style: TextStyle(fontSize: 30)),
                     subtitle: Text(
-                      "Race: ${character.race}\nLevel: ${character.level}\nFaction:${character.faction}",
+                      "Race: ${character.race}\nLevel: ${character.level}\nFaction: ${character.faction}",
                       style: TextStyle(fontSize: 20),
                     ),
                     onTap: () =>

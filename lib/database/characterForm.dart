@@ -172,6 +172,19 @@ class CharacterFormState extends State<CharacterForm> {
 
                             _formKey.currentState.save();
 
+                            Character character = Character(
+                                name: _name,
+                                race: _race,
+                                level: _level,
+                                faction: _faction);
+
+                            DatabaseService.db.update(widget.character).then(
+                                (storedCharacter) =>
+                                    BlocProvider.of<CharacterBloc>(context).add(
+                                      CharacterEvent.update(
+                                          widget.characterIndex, character),
+                                    ));
+
                             Navigator.pop(context);
                           },
                         ),
