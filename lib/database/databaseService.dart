@@ -38,7 +38,7 @@ class DatabaseService {
         "$COLUMN_NAME TEXT,"
         "$COLUMN_RACE TEXT,"
         "$COLUMN_LEVEL TEXT,"
-        "$COLUMN_FACTION TEXT,"
+        "$COLUMN_FACTION TEXT"
         ")",
       );
     });
@@ -68,6 +68,7 @@ class DatabaseService {
   Future<Character> insert(Character character) async {
     final db = await database;
     character.id = await db.insert(TABLE_CHARACTER, character.toMap());
+    print(character.id);
     return character;
   }
 }

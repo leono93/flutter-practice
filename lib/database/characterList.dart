@@ -1,5 +1,7 @@
 import './characterModel.dart';
 import './characterForm.dart';
+import './characterEvent.dart';
+import './databaseService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,6 +15,18 @@ class CharacterList extends StatefulWidget {
 }
 
 class _CharacterListState extends State<CharacterList> {
+  @override
+  void initState() {
+    super.initState();
+    DatabaseService.db.getCharacters().then(
+      (characterList) {
+        print(characterList);
+        BlocProvider.of<CharacterBloc>(context)
+            .add(CharacterEvent.setList(characterList));
+      },
+    );
+  }
+
   showCharacterDialog(BuildContext context, Character character, int index) {
     showDialog(
       context: context,

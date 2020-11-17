@@ -2,31 +2,31 @@ import '../database/characterEvent.dart';
 import '../database/characterModel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FoodBloc extends Bloc<FoodEvent, List<Food>> {
+class CharacterBloc extends Bloc<CharacterEvent, List<Character>> {
   @override
-  List<Food> get initialState => List<Food>();
+  List<Character> get initialState => List<Character>();
 
   @override
-  Stream<List<Food>> mapEventToState(FoodEvent event) async* {
+  Stream<List<Character>> mapEventToState(CharacterEvent event) async* {
     switch (event.eventType) {
       case EventType.setList:
-        yield event.foodList;
+        yield event.characterList;
         break;
       case EventType.add:
-        List<Food> newState = List.from(state);
-        if (event.newFood != null) {
-          newState.add(event.newFood);
+        List<Character> newState = List.from(state);
+        if (event.newCharacter != null) {
+          newState.add(event.newCharacter);
         }
         yield newState;
         break;
       case EventType.delete:
-        List<Food> newState = List.from(state);
-        newState.removeAt(event.foodIndex);
+        List<Character> newState = List.from(state);
+        newState.removeAt(event.characterIndex);
         yield newState;
         break;
       case EventType.update:
-        List<Food> newState = List.from(state);
-        newState[event.foodIndex] = event.newFood;
+        List<Character> newState = List.from(state);
+        newState[event.characterIndex] = event.newCharacter;
         yield newState;
         break;
       default:

@@ -1,5 +1,9 @@
 import './characterModel.dart';
 import 'package:flutter/material.dart';
+import './databaseService.dart';
+import '../bloc/character_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import './characterEvent.dart';
 
 class CharacterForm extends StatefulWidget {
   final Character character;
@@ -26,7 +30,7 @@ class CharacterFormState extends State<CharacterForm> {
       initialValue: _name,
       decoration: InputDecoration(labelText: 'Name'),
       maxLength: 15,
-      style: TextStyle(fontSize: 28),
+      style: TextStyle(fontSize: 20),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Name is Required';
@@ -43,9 +47,9 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildRace() {
     return TextFormField(
       initialValue: _race,
-      decoration: InputDecoration(labelText: 'Name'),
+      decoration: InputDecoration(labelText: 'Race'),
       maxLength: 15,
-      style: TextStyle(fontSize: 28),
+      style: TextStyle(fontSize: 20),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Name is Required';
@@ -54,7 +58,7 @@ class CharacterFormState extends State<CharacterForm> {
         return null;
       },
       onSaved: (String value) {
-        _name = value;
+        _race = value;
       },
     );
   }
@@ -62,9 +66,9 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildLevel() {
     return TextFormField(
       initialValue: _level,
-      decoration: InputDecoration(labelText: 'Name'),
+      decoration: InputDecoration(labelText: 'Level'),
       maxLength: 15,
-      style: TextStyle(fontSize: 28),
+      style: TextStyle(fontSize: 20),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Name is Required';
@@ -73,7 +77,7 @@ class CharacterFormState extends State<CharacterForm> {
         return null;
       },
       onSaved: (String value) {
-        _name = value;
+        _level = value;
       },
     );
   }
@@ -81,9 +85,9 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildFaction() {
     return TextFormField(
       initialValue: _faction,
-      decoration: InputDecoration(labelText: 'Name'),
+      decoration: InputDecoration(labelText: 'Faction'),
       maxLength: 15,
-      style: TextStyle(fontSize: 28),
+      style: TextStyle(fontSize: 20),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Name is Required';
@@ -92,7 +96,7 @@ class CharacterFormState extends State<CharacterForm> {
         return null;
       },
       onSaved: (String value) {
-        _name = value;
+        _faction = value;
       },
     );
   }
@@ -136,6 +140,18 @@ class CharacterFormState extends State<CharacterForm> {
                         }
 
                         _formKey.currentState.save();
+
+                        Character character = Character(
+                            name: _name,
+                            race: _race,
+                            level: _level,
+                            faction: _faction);
+
+                        DatabaseService.db.insert(character).then(
+                            (storedCharacter) =>
+                                BlocProvider.of<CharacterBloc>(context).add(
+                                  CharacterEvent.add(storedCharacter),
+                                ));
 
                         Navigator.pop(context);
                       },
