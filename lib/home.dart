@@ -11,13 +11,15 @@ import './classes/monk.dart';
 import './classes/demonhunter.dart';
 import './classes/druid.dart';
 import './classes/deathknight.dart';
+import './realms.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: new Stack(children: <Widget>[
-          new Container(
+      extendBodyBehindAppBar: true,
+        body: Stack(children: <Widget>[
+         Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/main.png"),
@@ -25,14 +27,14 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-          new Container(
+         Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
             image: AssetImage("assets/logo.png"),
             alignment: FractionalOffset(0.0, 0.1),
           ))),
-          new Container(
-              alignment: FractionalOffset(0.0, 0.45),
+        Container(
+              alignment: FractionalOffset(0.0, 0.43),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -63,8 +65,8 @@ class Home extends StatelessWidget {
                       icon: Image.asset("assets/huntericon.png"),
                     )
                   ])),
-          new Container(
-              alignment: FractionalOffset(0.0, 0.6),
+          Container(
+              alignment: FractionalOffset(0.0, 0.58),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -96,8 +98,8 @@ class Home extends StatelessWidget {
                       icon: Image.asset("assets/shamanicon.png"),
                     )
                   ])),
-          new Container(
-              alignment: FractionalOffset(0.0, 0.75),
+         Container(
+              alignment: FractionalOffset(0.0, 0.73),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -129,8 +131,8 @@ class Home extends StatelessWidget {
                       icon: Image.asset("assets/monkicon.png"),
                     )
                   ])),
-          new Container(
-              alignment: FractionalOffset(0.0, 0.9),
+         Container(
+              alignment: FractionalOffset(0.0, 0.88),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -164,24 +166,48 @@ class Home extends StatelessWidget {
                       icon: Image.asset("assets/dkicon.png"),
                     ),
                   ])),
+                           Container(
+              alignment: FractionalOffset(0.0, 0.99),
+              child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 30.0,
+                      width: 180.0,
+                      child:
+                    RaisedButton(
+                      color: Colors.black.withOpacity(0.2),
+                      onPressed: () {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CharacterField()),
+                        );
+                      },
+                      child: Text("SEARCH",
+                      style: TextStyle(
+                      color: Color(0xffc2c2c2),
+                      fontSize: 14.0,
+                      fontFamily: 'MORPHEUS',
+                      fontWeight: FontWeight.bold)),
+                    )),
+                    SizedBox(
+                      height: 30.0,
+                      width: 180.0,
+                      child:
+                    RaisedButton(
+                      color: Colors.black.withOpacity(0.2),
+                      onPressed: () {
+                      },
+                      child: Text("CHARACTERS",
+                      style: TextStyle(
+                      color: Color(0xffc2c2c2),
+                      fontSize: 14.0,
+                      fontFamily: 'MORPHEUS',
+                      fontWeight: FontWeight.bold)),
+                    )),
+                  ])),
         ]),
-        bottomNavigationBar: BottomAppBar(
-            color: Colors.black,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {},
-                ),
-                RaisedButton(
-                  onPressed: () {},
-                  child: Text("I am"),
-                ),
-                RaisedButton(
-                  onPressed: () {},
-                  child: Text("a button"),
-                ),
-              ],
-            )));
+    );
   }
 }
