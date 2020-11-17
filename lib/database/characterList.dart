@@ -65,7 +65,7 @@ class _CharacterListState extends State<CharacterList> {
   Widget build(BuildContext context) {
     print("Building entire character list scaffold");
     return Scaffold(
-      appBar: AppBar(title: Text("CharacterList")),
+      appBar: AppBar(title: Text("Character List")),
       body: Container(
         child: BlocConsumer<CharacterBloc, List<Character>>(
           builder: (context, characterList) {
@@ -75,10 +75,10 @@ class _CharacterListState extends State<CharacterList> {
 
                 Character character = characterList[index];
                 return ListTile(
-                    title: Text(character.name, style: TextStyle(fontSize: 30)),
+                    title: Text(character.name, style: TextStyle(fontSize: 25)),
                     subtitle: Text(
                       "Race: ${character.race}\nLevel: ${character.level}\nFaction: ${character.faction}",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 15),
                     ),
                     onTap: () =>
                         showCharacterDialog(context, character, index));

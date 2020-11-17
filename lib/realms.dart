@@ -22,8 +22,7 @@ class _CharacterFieldState extends State<CharacterField> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Character Search')),
+        appBar: AppBar(title: Text('Character Search')),
         body: Stack(children: <Widget>[
           Container(
               alignment: FractionalOffset(0.5, 0.10),
@@ -184,8 +183,8 @@ class ListViewRealms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.black12,
+        extendBodyBehindAppBar: true,
+        backgroundColor: Colors.black12,
         appBar: AppBar(
           backgroundColor: Color(0x44000000),
           elevation: 0,

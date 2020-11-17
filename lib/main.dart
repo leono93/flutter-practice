@@ -11,7 +11,7 @@ import 'bloc/character_bloc.dart';
 // class MyApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//     return MaterialApp(home: CharacterList());
+//     return MaterialApp(home: Home());
 //   }
 // }
 
@@ -23,10 +23,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider<CharacterBloc>(
       create: (context) => CharacterBloc(),
       child: MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-        ),
-        home: CharacterList(),
+        home: Home(),
       ),
     );
   }
