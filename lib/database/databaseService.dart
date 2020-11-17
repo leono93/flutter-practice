@@ -1,5 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import './characterModel.dart';
 
 class DatabaseService {
   static const String TABLE_CHARACTER = "character";
@@ -41,5 +42,32 @@ class DatabaseService {
         ")",
       );
     });
+  }
+
+  Future<List<Character>> getCharacters() async {
+    final db = await database;
+
+    var characters = await db.query(TABLE_CHARACTER, columns: [
+      COLUMN_ID,
+      COLUMN_NAME,
+      COLUMN_RACE,
+      COLUMN_LEVEL,
+      COLUMN_FACTION
+    ]);
+
+    List<Character> characterList = List<Character>();
+    characters.forEach((currentCharacter) {
+      Character character = Character.fromMap(currentCharacter);
+
+      characterList.add(character);
+    });
+
+    return characterList;
+  }
+
+  Future<Character> insert(Character character) async {
+    final db = await database;
+    character.id = await db.insert(TABLE_CHARACTER, character.toMap());
+    return character;
   }
 }
