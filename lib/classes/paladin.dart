@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bordered_text/bordered_text.dart';
 import '../descriptions/paladinDesc.dart';
+import '../database/characterForm.dart';
 
 const playerClass = 'paladin';
 const className = 'Paladin';
@@ -143,7 +144,12 @@ class Paladin extends StatelessWidget {
         new Container(
           alignment: FractionalOffset(0.95, 0.995),
           child: new RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CharacterForm()),
+                  );
+            },
             child: Text(
               'Add Character',
               style: TextStyle(

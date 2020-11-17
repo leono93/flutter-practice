@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bordered_text/bordered_text.dart';
 import '../descriptions/hunterDesc.dart';
+import '../database/characterForm.dart';
 
 const playerClass = 'hunter';
 const className = 'Hunter';
@@ -143,7 +144,12 @@ class Hunter extends StatelessWidget {
         new Container(
           alignment: FractionalOffset(0.95, 0.995),
           child: new RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CharacterForm()),
+                  );
+            },
             child: Text(
               'Add Character',
               style: TextStyle(

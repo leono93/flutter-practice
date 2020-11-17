@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bordered_text/bordered_text.dart';
 import '../descriptions/warriorDesc.dart';
+import '../database/characterForm.dart';
 
 const playerClass = 'warrior';
 const className = 'Warrior';
@@ -144,8 +145,10 @@ class Warrior extends StatelessWidget {
           alignment: FractionalOffset(0.95, 0.995),
           child: new RaisedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => WarriorDesc()));
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CharacterForm()),
+                  );
             },
             child: Text(
               'Add Character',
