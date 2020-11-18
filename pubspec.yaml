@@ -124,6 +124,9 @@ flutter:
   - assets/innIcon.jpg
   - assets/realmsBackground.png
   - assets/formBackground.png
+  - assets/AllianceBanner.jpg
+  - assets/HordeBanner.jpg
+  - assets/charList.png
 
 
 

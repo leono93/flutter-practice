@@ -163,23 +163,6 @@ class CharacterFormState extends State<CharacterForm> {
               ),
             ),
           ),
-        Align(
-            alignment: FractionalOffset(0.5, 0.1),
-            child: BorderedText(
-                strokeWidth: 1.8,
-                strokeColor: Colors.black,
-                child: Text('Add a character',
-                    style: TextStyle(
-                        fontSize: 30.0,
-                        fontFamily: 'MORPHEUS',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                              blurRadius: 10.0,
-                              color: Colors.black,
-                              offset: Offset(5.0, 5.0))
-                        ])))),
         Container(
         margin: EdgeInsets.only(left: 50, right: 50),
         child: Form(
@@ -197,9 +180,9 @@ class CharacterFormState extends State<CharacterForm> {
               widget.character == null
                   ? RaisedButton(
                       child: Text(
-                        'SUBMIT',
+                        'Add Character',
                   style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: 16.0,
                   fontFamily: 'MORPHEUS',
                   fontWeight: FontWeight.bold),
                       ),

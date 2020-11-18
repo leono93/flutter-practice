@@ -85,8 +85,8 @@ class DatabaseService {
 
   Future<int> update(Character character) async {
     final db = await database;
-
-    return await db.update(TABLE_CHARACTER, character.toMap(),
+        return await db.update(TABLE_CHARACTER, character.toMap(),
         where: "id = ?", whereArgs: [character.id]);
+
   }
 }

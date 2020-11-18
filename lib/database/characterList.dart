@@ -41,7 +41,7 @@ class _CharacterListState extends State<CharacterList> {
                     CharacterForm(character: character, characterIndex: index),
               ),
             ),
-            child: Text("Update"),
+            child: Text("Modify"),
           ),
           FlatButton(
             onPressed: () => DatabaseService.db.delete(character.id).then((_) {
@@ -50,7 +50,7 @@ class _CharacterListState extends State<CharacterList> {
               );
               Navigator.pop(context);
             }),
-            child: Text("Delete"),
+            child: Text("Delete character"),
           ),
           FlatButton(
             onPressed: () => Navigator.pop(context),
@@ -65,39 +65,63 @@ class _CharacterListState extends State<CharacterList> {
   Widget build(BuildContext context) {
     print("Building entire character list scaffold");
     return Scaffold(
-      appBar: AppBar(title: Text("Character List")),
-      body: Container(
+      body: Stack(children: <Widget>[
+        Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/charList.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+        ),
+        Container(
         child: BlocConsumer<CharacterBloc, List<Character>>(
           builder: (context, characterList) {
-            return ListView.separated(
+            return ListView.builder(
               itemBuilder: (BuildContext context, int index) {
                 print("characterList: $characterList");
 
                 Character character = characterList[index];
-                return ListTile(
-                    title: Text(character.name, style: TextStyle(fontSize: 25)),
+            return Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/${character.faction}Banner.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+                child: ListTile(
+                    title: Text(character.name, style: TextStyle(fontSize: 25, color: Colors.yellow[200])),
                     subtitle: Text(
-                      "Level ${character.level} ${character.race} ${character.pclass}\n${character.realm}, serving the ${character.faction}",
-                      style: TextStyle(fontSize: 15),
+                      "Level ${character.level} ${character.race} ${character.pclass}\n${character.realm} ${character.faction}",
+                      style: TextStyle(fontSize: 15,
+                      color: Color(0xffebebeb)),
                     ),
                     onTap: () =>
-                        showCharacterDialog(context, character, index));
+                        showCharacterDialog(context, character, index)));
               },
               itemCount: characterList.length,
-              separatorBuilder: (BuildContext context, int index) =>
-                  Divider(color: Colors.black),
             );
           },
           listener: (BuildContext context, characterList) {},
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+      Container(
+          alignment: FractionalOffset(0.95, 0.995),
+      child: RaisedButton(
         onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(builder: (BuildContext context) => CharacterForm()),
         ),
+              child: Text(
+              'Add Character',
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
+              ),
       ),
+      ),
+      ])
     );
   }
 }
