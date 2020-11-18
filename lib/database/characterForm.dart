@@ -4,6 +4,7 @@ import './databaseService.dart';
 import '../bloc/character_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import './characterEvent.dart';
+import 'package:bordered_text/bordered_text.dart';
 
 class CharacterForm extends StatefulWidget {
   final Character character;
@@ -21,6 +22,8 @@ class CharacterFormState extends State<CharacterForm> {
   String _name;
   String _race;
   String _level;
+  String _pclass;
+  String _realm;
   String _faction;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -29,11 +32,10 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _name,
       decoration: InputDecoration(labelText: 'Name'),
-      maxLength: 15,
-      style: TextStyle(fontSize: 20),
+      style: TextStyle(fontSize: 15),
       validator: (String value) {
         if (value.isEmpty) {
-          return 'Name is Required';
+          return 'Name is required';
         }
 
         return null;
@@ -48,11 +50,10 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _race,
       decoration: InputDecoration(labelText: 'Race'),
-      maxLength: 15,
-      style: TextStyle(fontSize: 20),
+      style: TextStyle(fontSize: 15),
       validator: (String value) {
         if (value.isEmpty) {
-          return 'Name is Required';
+          return 'Race is required';
         }
 
         return null;
@@ -67,11 +68,10 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _level,
       decoration: InputDecoration(labelText: 'Level'),
-      maxLength: 15,
-      style: TextStyle(fontSize: 20),
+      style: TextStyle(fontSize: 15),
       validator: (String value) {
         if (value.isEmpty) {
-          return 'Name is Required';
+          return 'Level is required';
         }
 
         return null;
@@ -82,15 +82,51 @@ class CharacterFormState extends State<CharacterForm> {
     );
   }
 
+  Widget _buildPclass() {
+    return TextFormField(
+      initialValue: _pclass,
+      decoration: InputDecoration(labelText: 'Class'),
+      style: TextStyle(fontSize: 15),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Class is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value) {
+        _pclass = value;
+      },
+    );
+  }
+
+  Widget _buildRealm() {
+    return TextFormField(
+      initialValue: _realm,
+      decoration: InputDecoration(labelText: 'Realm'),
+      style: TextStyle(fontSize: 15),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Realm is required';
+        }
+
+        return null;
+      },
+      onSaved: (String value) {
+        _realm = value;
+      },
+    );
+  }
+
   Widget _buildFaction() {
     return TextFormField(
       initialValue: _faction,
       decoration: InputDecoration(labelText: 'Faction'),
-      maxLength: 15,
-      style: TextStyle(fontSize: 20),
+      style: TextStyle(fontSize: 15,
+      color: Color(0xffc3c4c7)),
       validator: (String value) {
         if (value.isEmpty) {
-          return 'Name is Required';
+          return 'Faction is required';
         }
 
         return null;
@@ -108,6 +144,8 @@ class CharacterFormState extends State<CharacterForm> {
       _name = widget.character.name;
       _race = widget.character.race;
       _level = widget.character.level;
+      _pclass = widget.character.pclass;
+      _realm = widget.character.realm;
       _faction = widget.character.faction;
     }
   }
@@ -115,9 +153,35 @@ class CharacterFormState extends State<CharacterForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Character Form")),
-      body: Container(
-        margin: EdgeInsets.all(24),
+      resizeToAvoidBottomInset: false,
+      body: Stack(children: <Widget>[
+                  Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/formBackground.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        Align(
+            alignment: FractionalOffset(0.5, 0.1),
+            child: BorderedText(
+                strokeWidth: 1.8,
+                strokeColor: Colors.black,
+                child: Text('Add a character',
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        fontFamily: 'MORPHEUS',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                              blurRadius: 10.0,
+                              color: Colors.black,
+                              offset: Offset(5.0, 5.0))
+                        ])))),
+        Container(
+        margin: EdgeInsets.only(left: 50, right: 50),
         child: Form(
           key: _formKey,
           child: Column(
@@ -126,13 +190,18 @@ class CharacterFormState extends State<CharacterForm> {
               _buildName(),
               _buildRace(),
               _buildLevel(),
+              _buildPclass(),
+              _buildRealm(),
               _buildFaction(),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               widget.character == null
                   ? RaisedButton(
                       child: Text(
-                        'Submit',
-                        style: TextStyle(color: Colors.blue, fontSize: 16),
+                        'SUBMIT',
+                  style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
                       ),
                       onPressed: () {
                         if (!_formKey.currentState.validate()) {
@@ -145,6 +214,8 @@ class CharacterFormState extends State<CharacterForm> {
                             name: _name,
                             race: _race,
                             level: _level,
+                            pclass: _pclass,
+                            realm: _realm,
                             faction: _faction);
 
                         DatabaseService.db.insert(character).then(
@@ -162,7 +233,10 @@ class CharacterFormState extends State<CharacterForm> {
                         RaisedButton(
                           child: Text(
                             "Update",
-                            style: TextStyle(color: Colors.blue, fontSize: 16),
+                  style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
                           ),
                           onPressed: () {
                             if (!_formKey.currentState.validate()) {
@@ -176,6 +250,8 @@ class CharacterFormState extends State<CharacterForm> {
                                 name: _name,
                                 race: _race,
                                 level: _level,
+                                pclass: _pclass,
+                                realm: _realm,
                                 faction: _faction);
 
                             DatabaseService.db.update(widget.character).then(
@@ -191,7 +267,10 @@ class CharacterFormState extends State<CharacterForm> {
                         RaisedButton(
                           child: Text(
                             "Cancel",
-                            style: TextStyle(color: Colors.red, fontSize: 16),
+                  style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
                           ),
                           onPressed: () => Navigator.pop(context),
                         ),
@@ -201,6 +280,7 @@ class CharacterFormState extends State<CharacterForm> {
           ),
         ),
       ),
+      ]),
     );
   }
 }

@@ -8,6 +8,8 @@ class DatabaseService {
   static const String COLUMN_NAME = "name";
   static const String COLUMN_RACE = "race";
   static const String COLUMN_LEVEL = "level";
+  static const String COLUMN_PCLASS = "pclass";
+  static const String COLUMN_REALM = "realm";
   static const String COLUMN_FACTION = "faction";
 
   DatabaseService._();
@@ -28,7 +30,7 @@ class DatabaseService {
   Future<Database> createDatabase() async {
     String dbPath = await getDatabasesPath();
 
-    return await openDatabase(join(dbPath, 'characterDb.db'), version: 1,
+    return await openDatabase(join(dbPath, 'characterDb.db'), version: 2,
         onCreate: (Database database, int version) async {
       print("Creating character table");
 
@@ -38,6 +40,8 @@ class DatabaseService {
         "$COLUMN_NAME TEXT,"
         "$COLUMN_RACE TEXT,"
         "$COLUMN_LEVEL TEXT,"
+        "$COLUMN_PCLASS TEXT,"
+        "$COLUMN_REALM TEXT,"
         "$COLUMN_FACTION TEXT"
         ")",
       );
@@ -52,6 +56,8 @@ class DatabaseService {
       COLUMN_NAME,
       COLUMN_RACE,
       COLUMN_LEVEL,
+      COLUMN_PCLASS,
+      COLUMN_REALM,
       COLUMN_FACTION
     ]);
 

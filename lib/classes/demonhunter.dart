@@ -144,10 +144,10 @@ class DemonHunter extends StatelessWidget {
           alignment: FractionalOffset(0.95, 0.995),
           child: new RaisedButton(
             onPressed: () {
-                                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CharacterForm()),
-                  );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CharacterForm()),
+              );
             },
             child: Text(
               'Add Character',

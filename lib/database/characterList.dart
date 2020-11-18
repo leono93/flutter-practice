@@ -77,7 +77,7 @@ class _CharacterListState extends State<CharacterList> {
                 return ListTile(
                     title: Text(character.name, style: TextStyle(fontSize: 25)),
                     subtitle: Text(
-                      "Race: ${character.race}\nLevel: ${character.level}\nFaction: ${character.faction}",
+                      "Level ${character.level} ${character.race} ${character.pclass}\n${character.realm}, serving the ${character.faction}",
                       style: TextStyle(fontSize: 15),
                     ),
                     onTap: () =>
