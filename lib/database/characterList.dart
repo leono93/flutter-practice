@@ -31,7 +31,7 @@ class _CharacterListState extends State<CharacterList> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(character.name),
-        content: Text("ID ${character.id}"),
+        content: Text("Level ${character.level} ${character.race} ${character.pclass}"),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.pushReplacement(
@@ -65,6 +65,13 @@ class _CharacterListState extends State<CharacterList> {
   Widget build(BuildContext context) {
     print("Building entire character list scaffold");
     return Scaffold(
+        extendBodyBehindAppBar: true,
+        backgroundColor: Colors.black12,
+        appBar: AppBar(
+          backgroundColor: Color(0x44000000),
+          elevation: 0,
+          title: Text("Character List"),
+        ),
       body: Stack(children: <Widget>[
         Container(
             decoration: BoxDecoration(
@@ -80,7 +87,6 @@ class _CharacterListState extends State<CharacterList> {
             return ListView.builder(
               itemBuilder: (BuildContext context, int index) {
                 print("characterList: $characterList");
-
                 Character character = characterList[index];
             return Container(
             decoration: BoxDecoration(
@@ -90,7 +96,12 @@ class _CharacterListState extends State<CharacterList> {
               ),
             ),
                 child: ListTile(
-                    title: Text(character.name, style: TextStyle(fontSize: 25, color: Colors.yellow[200])),
+                    title: Text(character.name, style: TextStyle(fontSize: 25, color: "${character.faction}" == "Alliance" ? Colors.blue : Colors.red[600], shadows: [
+                                Shadow(
+                                    blurRadius: 9.0,
+                                    color: Colors.black,
+                                    offset: Offset(5.0, 5.0))
+                              ])),
                     subtitle: Text(
                       "Level ${character.level} ${character.race} ${character.pclass}\n${character.realm} ${character.faction}",
                       style: TextStyle(fontSize: 15,
@@ -105,6 +116,21 @@ class _CharacterListState extends State<CharacterList> {
           listener: (BuildContext context, characterList) {},
         ),
       ),
+            Container(
+          alignment: FractionalOffset(0.05, 0.995),
+          child: RaisedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Home',
+              style: TextStyle(
+                  fontSize: 14.0,
+                  fontFamily: 'MORPHEUS',
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
       Container(
           alignment: FractionalOffset(0.95, 0.995),
       child: RaisedButton(
