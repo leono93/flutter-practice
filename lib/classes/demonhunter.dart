@@ -14,8 +14,8 @@ class DemonHunter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Stack(children: <Widget>[
-        new Container(
+      body: Stack(children: <Widget>[
+        Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/$playerClass.jpg"),
@@ -103,9 +103,9 @@ class DemonHunter extends StatelessWidget {
             ),
           ],
         ))),
-        new Container(
+        Container(
           alignment: FractionalOffset(0.05, 0.995),
-          child: new RaisedButton(
+          child: RaisedButton(
             onPressed: () {
               Navigator.pop(context);
             },
@@ -118,7 +118,7 @@ class DemonHunter extends StatelessWidget {
             ),
           ),
         ),
-        new Container(
+        Container(
           alignment: FractionalOffset(0.5, 0.995),
           child: ButtonTheme(
               minWidth: 30,
@@ -140,9 +140,9 @@ class DemonHunter extends StatelessWidget {
                 ),
               )),
         ),
-        new Container(
+        Container(
           alignment: FractionalOffset(0.95, 0.995),
-          child: new RaisedButton(
+          child: RaisedButton(
             onPressed: () {
               Navigator.push(
                 context,

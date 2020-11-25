@@ -183,7 +183,7 @@ class Home extends StatelessWidget {
                     },
                     child: Text("SEARCH",
                         style: TextStyle(
-                            color: Color(0xffc3c4c7),
+                            color: Color(0xffebebeb),
                             fontSize: 14.0,
                             fontFamily: 'MORPHEUS',
                             fontWeight: FontWeight.bold)),
@@ -202,7 +202,7 @@ class Home extends StatelessWidget {
                     },
                     child: Text("CHARACTERS",
                         style: TextStyle(
-                            color: Color(0xffc3c4c7),
+                            color: Color(0xffebebeb),
                             fontSize: 14.0,
                             fontFamily: 'MORPHEUS',
                             fontWeight: FontWeight.bold)),

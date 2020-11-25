@@ -31,7 +31,13 @@ class _CharacterListState extends State<CharacterList> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(character.name),
-        content: Text("Level ${character.level} ${character.race} ${character.pclass}"),
+        content: Text("Level" +
+            " "
+                "${character.level}" +
+            " "
+                "${character.race}" +
+            " "
+                "${character.pclass}"),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.pushReplacement(
@@ -72,82 +78,89 @@ class _CharacterListState extends State<CharacterList> {
           elevation: 0,
           title: Text("Character List"),
         ),
-      body: Stack(children: <Widget>[
-        Container(
+        body: Stack(children: <Widget>[
+          Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/charList.png"),
                 fit: BoxFit.cover,
               ),
             ),
-        ),
-        Container(
-        child: BlocConsumer<CharacterBloc, List<Character>>(
-          builder: (context, characterList) {
-            return ListView.builder(
-              itemBuilder: (BuildContext context, int index) {
-                print("characterList: $characterList");
-                Character character = characterList[index];
-            return Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/${character.faction}Banner.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-                child: ListTile(
-                    title: Text(character.name, style: TextStyle(fontSize: 25, color: "${character.faction}" == "Alliance" ? Colors.blue : Colors.red[600], shadows: [
-                                Shadow(
-                                    blurRadius: 9.0,
-                                    color: Colors.black,
-                                    offset: Offset(5.0, 5.0))
-                              ])),
-                    subtitle: Text(
-                      "Level ${character.level} ${character.race} ${character.pclass}\n${character.realm} ${character.faction}",
-                      style: TextStyle(fontSize: 15,
-                      color: Color(0xffebebeb)),
-                    ),
-                    onTap: () =>
-                        showCharacterDialog(context, character, index)));
+          ),
+          Container(
+            child: BlocConsumer<CharacterBloc, List<Character>>(
+              builder: (context, characterList) {
+                return ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                    print("characterList: $characterList");
+                    Character character = characterList[index];
+                    return Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                "assets/${character.faction}Banner.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: ListTile(
+                            title: Text(character.name,
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    color: "${character.faction}" == "Alliance"
+                                        ? Colors.blue
+                                        : Colors.red[700],
+                                    shadows: [
+                                      Shadow(
+                                          blurRadius: 9.0,
+                                          color: Colors.black,
+                                          offset: Offset(5.0, 5.0))
+                                    ])),
+                            subtitle: Text(
+                              "Level ${character.level} ${character.race} ${character.pclass}\n${character.realm} ${character.faction}",
+                              style: TextStyle(
+                                  fontSize: 15, color: Color(0xffebebeb)),
+                            ),
+                            onTap: () => showCharacterDialog(
+                                context, character, index)));
+                  },
+                  itemCount: characterList.length,
+                );
               },
-              itemCount: characterList.length,
-            );
-          },
-          listener: (BuildContext context, characterList) {},
-        ),
-      ),
-            Container(
-          alignment: FractionalOffset(0.05, 0.995),
-          child: RaisedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text(
-              'Home',
-              style: TextStyle(
-                  fontSize: 14.0,
-                  fontFamily: 'MORPHEUS',
-                  fontWeight: FontWeight.bold),
+              listener: (BuildContext context, characterList) {},
             ),
           ),
-        ),
-      Container(
-          alignment: FractionalOffset(0.95, 0.995),
-      child: RaisedButton(
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (BuildContext context) => CharacterForm()),
-        ),
+          Container(
+            alignment: FractionalOffset(0.05, 0.995),
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
               child: Text(
-              'Add Character',
-              style: TextStyle(
-                  fontSize: 14.0,
-                  fontFamily: 'MORPHEUS',
-                  fontWeight: FontWeight.bold),
+                'Home',
+                style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold),
               ),
-      ),
-      ),
-      ])
-    );
+            ),
+          ),
+          Container(
+            alignment: FractionalOffset(0.95, 0.995),
+            child: RaisedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => CharacterForm()),
+              ),
+              child: Text(
+                'Add Character',
+                style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'MORPHEUS',
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        ]));
   }
 }

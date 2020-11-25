@@ -16,8 +16,8 @@ class Druid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Stack(children: <Widget>[
-        new Container(
+      body: Stack(children: <Widget>[
+        Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/$playerClass.jpg"),
@@ -105,9 +105,9 @@ class Druid extends StatelessWidget {
             ),
           ],
         ))),
-        new Container(
+        Container(
           alignment: FractionalOffset(0.05, 0.995),
-          child: new RaisedButton(
+          child: RaisedButton(
             onPressed: () {
               Navigator.pop(context);
             },
@@ -120,7 +120,7 @@ class Druid extends StatelessWidget {
             ),
           ),
         ),
-        new Container(
+        Container(
           alignment: FractionalOffset(0.5, 0.995),
           child: ButtonTheme(
               minWidth: 30,
@@ -142,14 +142,14 @@ class Druid extends StatelessWidget {
                 ),
               )),
         ),
-        new Container(
+        Container(
           alignment: FractionalOffset(0.95, 0.995),
-          child: new RaisedButton(
+          child: RaisedButton(
             onPressed: () {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CharacterForm()),
-                  );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CharacterForm()),
+              );
             },
             child: Text(
               'Add Character',
