@@ -202,6 +202,7 @@ class ListViewRealms extends StatelessWidget {
           GridView.count(
               childAspectRatio: 5 / 1,
               crossAxisCount: 2,
+              mainAxisSpacing: 15,
               children: List.generate(109, (index) {
                 return Center(
                     child: BorderedText(

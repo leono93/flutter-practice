@@ -98,7 +98,9 @@ class _CharacterListState extends State<CharacterList> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                                "assets/${character.faction}Banner.jpg"),
+                                "${character.faction}" == "Alliance"
+                                    ? "assets/AllianceBanner.jpg"
+                                    : "assets/HordeBanner.jpg"),
                             fit: BoxFit.cover,
                           ),
                         ),

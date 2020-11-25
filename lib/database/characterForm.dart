@@ -32,7 +32,8 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _name,
       decoration: InputDecoration(labelText: 'Name'),
-      style: TextStyle(fontSize: 15),
+      style: TextStyle(
+          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Name is required';
@@ -50,7 +51,8 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _race,
       decoration: InputDecoration(labelText: 'Race'),
-      style: TextStyle(fontSize: 15),
+      style: TextStyle(
+          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Race is required';
@@ -68,7 +70,8 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _level,
       decoration: InputDecoration(labelText: 'Level'),
-      style: TextStyle(fontSize: 15),
+      style: TextStyle(
+          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Level is required';
@@ -86,7 +89,8 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _pclass,
       decoration: InputDecoration(labelText: 'Class'),
-      style: TextStyle(fontSize: 15),
+      style: TextStyle(
+          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Class is required';
@@ -104,7 +108,8 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _realm,
       decoration: InputDecoration(labelText: 'Realm'),
-      style: TextStyle(fontSize: 15),
+      style: TextStyle(
+          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Realm is required';
@@ -122,8 +127,8 @@ class CharacterFormState extends State<CharacterForm> {
     return TextFormField(
       initialValue: _faction,
       decoration: InputDecoration(labelText: 'Faction'),
-      style: TextStyle(fontSize: 15,
-      color: Color(0xffc3c4c7)),
+      style: TextStyle(
+          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Faction is required';
@@ -155,114 +160,115 @@ class CharacterFormState extends State<CharacterForm> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(children: <Widget>[
-                  Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/formBackground.png"),
-                fit: BoxFit.cover,
-              ),
+        Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/formBackground.png"),
+              fit: BoxFit.cover,
             ),
           ),
+        ),
         Container(
-        margin: EdgeInsets.only(left: 50, right: 50),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildName(),
-              _buildRace(),
-              _buildLevel(),
-              _buildPclass(),
-              _buildRealm(),
-              _buildFaction(),
-              SizedBox(height: 10),
-              widget.character == null
-                  ? RaisedButton(
-                      child: Text(
-                        'Add Character',
-                  style: TextStyle(
-                  fontSize: 16.0,
-                  fontFamily: 'MORPHEUS',
-                  fontWeight: FontWeight.bold),
+          margin: EdgeInsets.only(left: 50, right: 50),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildName(),
+                _buildRace(),
+                _buildLevel(),
+                _buildPclass(),
+                _buildRealm(),
+                _buildFaction(),
+                SizedBox(height: 10),
+                widget.character == null
+                    ? RaisedButton(
+                        child: Text(
+                          'Add Character',
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              fontFamily: 'MORPHEUS',
+                              fontWeight: FontWeight.bold),
+                        ),
+                        onPressed: () {
+                          if (!_formKey.currentState.validate()) {
+                            return;
+                          }
+
+                          _formKey.currentState.save();
+
+                          Character character = Character(
+                              name: _name,
+                              race: _race,
+                              level: _level,
+                              pclass: _pclass,
+                              realm: _realm,
+                              faction: _faction);
+
+                          DatabaseService.db.insert(character).then(
+                              (storedCharacter) =>
+                                  BlocProvider.of<CharacterBloc>(context).add(
+                                    CharacterEvent.add(storedCharacter),
+                                  ));
+
+                          Navigator.pop(context);
+                        },
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          RaisedButton(
+                            child: Text(
+                              "Update",
+                              style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontFamily: 'MORPHEUS',
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () {
+                              if (!_formKey.currentState.validate()) {
+                                print("form");
+                                return;
+                              }
+
+                              _formKey.currentState.save();
+
+                              Character character = Character(
+                                  name: _name,
+                                  race: _race,
+                                  level: _level,
+                                  pclass: _pclass,
+                                  realm: _realm,
+                                  faction: _faction);
+
+                              DatabaseService.db.update(widget.character).then(
+                                  (storedCharacter) =>
+                                      BlocProvider.of<CharacterBloc>(context)
+                                          .add(
+                                        CharacterEvent.update(
+                                            widget.characterIndex, character),
+                                      ));
+
+                              Navigator.pop(context);
+                            },
+                          ),
+                          RaisedButton(
+                            child: Text(
+                              "Cancel",
+                              style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontFamily: 'MORPHEUS',
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                        ],
                       ),
-                      onPressed: () {
-                        if (!_formKey.currentState.validate()) {
-                          return;
-                        }
-
-                        _formKey.currentState.save();
-
-                        Character character = Character(
-                            name: _name,
-                            race: _race,
-                            level: _level,
-                            pclass: _pclass,
-                            realm: _realm,
-                            faction: _faction);
-
-                        DatabaseService.db.insert(character).then(
-                            (storedCharacter) =>
-                                BlocProvider.of<CharacterBloc>(context).add(
-                                  CharacterEvent.add(storedCharacter),
-                                ));
-
-                        Navigator.pop(context);
-                      },
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        RaisedButton(
-                          child: Text(
-                            "Update",
-                  style: TextStyle(
-                  fontSize: 14.0,
-                  fontFamily: 'MORPHEUS',
-                  fontWeight: FontWeight.bold),
-                          ),
-                          onPressed: () {
-                            if (!_formKey.currentState.validate()) {
-                              print("form");
-                              return;
-                            }
-
-                            _formKey.currentState.save();
-
-                            Character character = Character(
-                                name: _name,
-                                race: _race,
-                                level: _level,
-                                pclass: _pclass,
-                                realm: _realm,
-                                faction: _faction);
-
-                            DatabaseService.db.update(widget.character).then(
-                                (storedCharacter) =>
-                                    BlocProvider.of<CharacterBloc>(context).add(
-                                      CharacterEvent.update(
-                                          widget.characterIndex, character),
-                                    ));
-
-                            Navigator.pop(context);
-                          },
-                        ),
-                        RaisedButton(
-                          child: Text(
-                            "Cancel",
-                  style: TextStyle(
-                  fontSize: 14.0,
-                  fontFamily: 'MORPHEUS',
-                  fontWeight: FontWeight.bold),
-                          ),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ],
-                    ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
       ]),
     );
   }
