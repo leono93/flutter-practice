@@ -16,7 +16,7 @@ _redirectOfficial() async {
 
 _redirectRio() async {
   const url =
-      'https://raider.io/mythic-plus-character-rankings/season-bfa-4-post/world/$playerClass/all';
+      'https://raider.io/mythic-plus-character-rankings/season-sl-1/world/$playerClass/all';
   const errorMsg = 'Oops! Something went wrong while trying to launch $url';
   if (await canLaunch(url)) {
     await launch(url);

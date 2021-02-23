@@ -31,9 +31,14 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildName() {
     return TextFormField(
       initialValue: _name,
-      decoration: InputDecoration(labelText: 'Name'),
+      decoration: InputDecoration(
+          labelText: 'Name',
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: 'MORPHEUS',
+          )),
       style: TextStyle(
-          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
+          fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Name is required';
@@ -50,9 +55,14 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildRace() {
     return TextFormField(
       initialValue: _race,
-      decoration: InputDecoration(labelText: 'Race'),
+      decoration: InputDecoration(
+          labelText: 'Race',
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: 'MORPHEUS',
+          )),
       style: TextStyle(
-          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
+          fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Race is required';
@@ -69,9 +79,14 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildLevel() {
     return TextFormField(
       initialValue: _level,
-      decoration: InputDecoration(labelText: 'Level'),
+      decoration: InputDecoration(
+          labelText: 'Level',
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: 'MORPHEUS',
+          )),
       style: TextStyle(
-          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
+          fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Level is required';
@@ -88,9 +103,14 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildPclass() {
     return TextFormField(
       initialValue: _pclass,
-      decoration: InputDecoration(labelText: 'Class'),
+      decoration: InputDecoration(
+          labelText: 'Class',
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: 'MORPHEUS',
+          )),
       style: TextStyle(
-          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
+          fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Class is required';
@@ -107,9 +127,14 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildRealm() {
     return TextFormField(
       initialValue: _realm,
-      decoration: InputDecoration(labelText: 'Realm'),
+      decoration: InputDecoration(
+          labelText: 'Realm',
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: 'MORPHEUS',
+          )),
       style: TextStyle(
-          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
+          fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Realm is required';
@@ -126,9 +151,14 @@ class CharacterFormState extends State<CharacterForm> {
   Widget _buildFaction() {
     return TextFormField(
       initialValue: _faction,
-      decoration: InputDecoration(labelText: 'Faction'),
+      decoration: InputDecoration(
+          labelText: 'Faction',
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontFamily: 'MORPHEUS',
+          )),
       style: TextStyle(
-          fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xff393e46)),
+          fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
       validator: (String value) {
         if (value.isEmpty) {
           return 'Faction is required';

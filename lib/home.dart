@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import './classes/warrior.dart';
-import './classes/paladin.dart';
-import './classes/hunter.dart';
-import './classes/rogue.dart';
-import './classes/priest.dart';
-import './classes/shaman.dart';
-import './classes/mage.dart';
-import './classes/warlock.dart';
-import './classes/monk.dart';
-import './classes/demonhunter.dart';
-import './classes/druid.dart';
-import './classes/deathknight.dart';
+import './descriptions/warriorDesc.dart';
+import './descriptions/paladinDesc.dart';
+import './descriptions/hunterDesc.dart';
+import './descriptions/rogueDesc.dart';
+import './descriptions/priestDesc.dart';
+import './descriptions/shamanDesc.dart';
+import './descriptions/mageDesc.dart';
+import './descriptions/warlockDesc.dart';
+import './descriptions/monkDesc.dart';
+import './descriptions/dhDesc.dart';
+import './descriptions/druidDesc.dart';
+import './descriptions/dkDesc.dart';
 import './realms.dart';
 import './database/characterList.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,7 +44,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Warrior()),
+                        MaterialPageRoute(builder: (context) => WarriorDesc()),
                       );
                     },
                     icon: Image.asset("assets/warrioricon.png"),
@@ -53,7 +53,8 @@ class Home extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Paladin()),
+                          MaterialPageRoute(
+                              builder: (context) => PaladinDesc()),
                         );
                       },
                       icon: Image.asset("assets/paladinicon.png")),
@@ -61,7 +62,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Hunter()),
+                        MaterialPageRoute(builder: (context) => HunterDesc()),
                       );
                     },
                     icon: Image.asset("assets/huntericon.png"),
@@ -76,7 +77,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Rogue()),
+                        MaterialPageRoute(builder: (context) => RogueDesc()),
                       );
                     },
                     icon: Image.asset("assets/rogueicon.png"),
@@ -85,7 +86,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Priest()),
+                        MaterialPageRoute(builder: (context) => PriestDesc()),
                       );
                     },
                     icon: Image.asset("assets/priesticon.png"),
@@ -94,7 +95,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Shaman()),
+                        MaterialPageRoute(builder: (context) => ShamanDesc()),
                       );
                     },
                     icon: Image.asset("assets/shamanicon.png"),
@@ -109,7 +110,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Mage()),
+                        MaterialPageRoute(builder: (context) => MageDesc()),
                       );
                     },
                     icon: Image.asset("assets/mageicon.png"),
@@ -118,7 +119,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Warlock()),
+                        MaterialPageRoute(builder: (context) => WarlockDesc()),
                       );
                     },
                     icon: Image.asset("assets/warlockicon.png"),
@@ -127,7 +128,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Monk()),
+                        MaterialPageRoute(builder: (context) => MonkDesc()),
                       );
                     },
                     icon: Image.asset("assets/monkicon.png"),
@@ -142,7 +143,8 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DemonHunter()),
+                        MaterialPageRoute(
+                            builder: (context) => DemonHunterDesc()),
                       );
                     },
                     icon: Image.asset("assets/dhicon.png"),
@@ -151,7 +153,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Druid()),
+                        MaterialPageRoute(builder: (context) => DruidDesc()),
                       );
                     },
                     icon: Image.asset("assets/druidicon.png"),
@@ -160,7 +162,8 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DeathKnight()),
+                        MaterialPageRoute(
+                            builder: (context) => DeathKnightDesc()),
                       );
                     },
                     icon: Image.asset("assets/dkicon.png"),
@@ -181,10 +184,10 @@ class Home extends StatelessWidget {
                             builder: (context) => CharacterField()),
                       );
                     },
-                    child: Text("SEARCH",
+                    child: Text("Search",
                         style: TextStyle(
-                            color: Color(0xffebebeb),
-                            fontSize: 14.0,
+                            color: Color(0xffebebeb).withOpacity(0.9),
+                            fontSize: 17.0,
                             fontFamily: 'MORPHEUS',
                             fontWeight: FontWeight.bold)),
                   )),
@@ -200,10 +203,10 @@ class Home extends StatelessWidget {
                             builder: (context) => CharacterList()),
                       );
                     },
-                    child: Text("CHARACTERS",
+                    child: Text("Characters",
                         style: TextStyle(
-                            color: Color(0xffebebeb),
-                            fontSize: 14.0,
+                            color: Color(0xffebebeb).withOpacity(0.9),
+                            fontSize: 17.0,
                             fontFamily: 'MORPHEUS',
                             fontWeight: FontWeight.bold)),
                   )),

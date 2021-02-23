@@ -5,6 +5,7 @@ import './databaseService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/character_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CharacterList extends StatefulWidget {
   const CharacterList({Key key}) : super(key: key);

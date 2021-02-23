@@ -22,36 +22,58 @@ class _CharacterFieldState extends State<CharacterField> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Character Search')),
+        extendBodyBehindAppBar: true,
+        backgroundColor: Colors.black12,
+        appBar: AppBar(
+            title: Text('Character Search'),
+            backgroundColor: Color(0x44000000)),
         body: Stack(children: <Widget>[
           Container(
-              alignment: FractionalOffset(0.5, 0.10),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/ardenweald.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Container(
+              alignment: FractionalOffset(0.5, 0.30),
               child: TextField(
                   controller: nameController,
                   decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Enter a character name'))),
+                      hintText: 'Character name',
+                      hintStyle: TextStyle(fontSize: 19.0, color: Colors.white),
+                      contentPadding: EdgeInsets.all(20.0)),
+                  style: TextStyle(color: Colors.white))),
           Container(
-              alignment: FractionalOffset(0.5, 0.20),
+              alignment: FractionalOffset(0.5, 0.45),
               child: TextField(
                   controller: realmController,
                   decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Enter a realm name'))),
+                      hintText: 'Character realm',
+                      hintStyle: TextStyle(fontSize: 19.0, color: Colors.white),
+                      contentPadding: EdgeInsets.all(20.0)),
+                  style: TextStyle(color: Colors.white))),
           Container(
-            alignment: FractionalOffset(0.90, 0.20),
-            child: RaisedButton(
+              alignment: FractionalOffset(0.90, 0.45),
+              child: RaisedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => ListViewRealms()),
                   );
                 },
-                child: Text('Realm Selection')),
-          ),
+                child: Text(
+                  'Realms',
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontFamily: 'MORPHEUS',
+                      fontWeight: FontWeight.bold),
+                ),
+              )),
           Container(
-            alignment: FractionalOffset(0.5, 0.4),
-            child: RaisedButton(
+              alignment: FractionalOffset(0.5, 0.7),
+              child: RaisedButton(
                 onPressed: () {
                   setState(() {
                     enteredName = nameController.text;
@@ -61,13 +83,20 @@ class _CharacterFieldState extends State<CharacterField> {
                   print(enteredRealm);
                   fetchRioCharacter(enteredName, enteredRealm);
                 },
-                child: Text('Search')),
-          )
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontFamily: 'MORPHEUS',
+                      fontWeight: FontWeight.bold),
+                ),
+              ))
         ]));
   }
 }
 
 class ListViewRealms extends StatelessWidget {
+  String realm_id;
   final List<String> realms = [
     "Aerie Peak",
     "Agamaggan",
